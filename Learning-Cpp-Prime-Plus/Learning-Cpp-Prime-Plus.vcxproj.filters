@@ -18,5 +18,13 @@
     <ClCompile Include="Learning-Cpp-Prime-Plus.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Chapter2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Chapter2.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
