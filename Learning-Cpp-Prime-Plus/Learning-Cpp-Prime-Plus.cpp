@@ -2,13 +2,12 @@
 //
 
 #include <iostream>
-#include "Chapter2.h"
+extern void TEST();
 
 int main()
 {
     std::cout << "Hello World!\n";
-    Chapter2_test();
-
+    TEST();
     return 0;
 }
 

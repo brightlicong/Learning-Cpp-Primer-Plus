@@ -21,9 +21,18 @@
     <ClCompile Include="Chapter2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Chapter3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter2.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter3.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
