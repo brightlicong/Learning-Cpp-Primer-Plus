@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Learning-Cpp-Prime-Plus", "Learning-Cpp-Prime-Plus\Learning-Cpp-Prime-Plus.vcxproj", "{167D5662-D05D-4952-9680-CD6DBC82B884}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Learning-Cpp-Primer-Plus", "Learning-Cpp-Primer-Plus\Learning-Cpp-Primer-Plus.vcxproj", "{167D5662-D05D-4952-9680-CD6DBC82B884}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

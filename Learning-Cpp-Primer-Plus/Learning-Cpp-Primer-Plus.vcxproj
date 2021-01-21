@@ -24,6 +24,7 @@
     <ProjectGuid>{167d5662-d05d-4952-9680-cd6dbc82b884}</ProjectGuid>
     <RootNamespace>LearningCppPrimePlus</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Learning-Cpp-Primer-Plus</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -141,8 +142,8 @@
   <ItemGroup>
     <ClCompile Include="Chapter2.cpp" />
     <ClCompile Include="Chapter3.cpp" />
-    <ClCompile Include="chapter4.cpp" />
-    <ClCompile Include="Learning-Cpp-Prime-Plus.cpp" />
+    <ClCompile Include="Chapter4.cpp" />
+    <ClCompile Include="Learning-Cpp-Primer-Plus.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>

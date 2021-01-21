@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Learning-Cpp-Prime-Plus.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Chapter2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -27,7 +24,10 @@
     <ClCompile Include="test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="chapter4.cpp">
+    <ClCompile Include="Learning-Cpp-Primer-Plus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
