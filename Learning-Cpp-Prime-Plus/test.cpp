@@ -1,6 +1,12 @@
-#include "Chapter3.h"
+#include "Chapter4.h"
+#include <iostream>
 
+void tryNewFeature(void) {
+	std::cout << (int *)"Home of the jolly bytes";
+
+}
 
 void TEST(void) {
-	Chapter3_test();
+	Chapter4_test();
+	//tryNewFeature();
 }
