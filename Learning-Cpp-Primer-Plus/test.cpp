@@ -1,4 +1,4 @@
-#include "Chapter4.h"
+#include "Chapter5.h"
 #include <iostream>
 
 void tryNewFeature(void) {
@@ -7,6 +7,6 @@ void tryNewFeature(void) {
 }
 
 void TEST(void) {
-	Chapter4_test();
+	Chapter5_test();
 	//tryNewFeature();
 }
