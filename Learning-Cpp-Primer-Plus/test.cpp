@@ -1,12 +1,14 @@
-#include "Chapter5.h"
+#include "Chapter6.h"
 #include <iostream>
 
 void tryNewFeature(void) {
-	std::cout << (int *)"Home of the jolly bytes";
+	using namespace std;
+	bool test = false;
+	cout << !!test;
 
 }
 
 void TEST(void) {
-	Chapter5_test();
+	Chapter6_test();
 	//tryNewFeature();
 }
