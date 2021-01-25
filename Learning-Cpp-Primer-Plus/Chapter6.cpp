@@ -19,7 +19,22 @@ void practice6_1(void) {
 }
 
 void practice6_2(void) {
-    cout << "Î´¶Á¶®Ìâ¸É¡£\n";
+    double donation[10];
+    double sum = 0;
+    int i = 0;
+    while (cin >> donation[i] && i < 10) {
+        sum += donation[i];
+        i++;
+    }
+    double average = sum / i;
+    int bigger_num = 0;
+    for (int j = 0; j < i; j++) {
+        if (donation[j] > average)
+            bigger_num++;
+    }
+    cout << "The average = " << average << endl;
+    cout << "In this array has " << bigger_num << " large than avearge" << endl;
+    
     /*
     double donation[10];
     int len, i, j;
@@ -137,14 +152,97 @@ void practice6_4(void) {
 };
 
 void practice6_5(void) {
+    long income;
+    double tax = 0.0;
+    cout << "Please enter your income." << endl;
+    while (cin >> income) {
+        if (income < 0) {
+            cout << "Done!";
+            break;
+        };
+        if (income < 5000)
+            tax = 0;
+        else if (income < 15000)
+            tax = 0.1 * (income - 5000.0);
+        else if (income < 35000)
+            tax = 0.1 * 10000 + 0.15 * (income - 15000.0);
+        else
+            tax = 0.1 * 1000 + 0.15 * 20000 + 0.2 * (income - 35000.0);
+        cout << "Your tax is " << tax << endl;
+        cout << "Please enter your income." << endl;
+
+    }
 
 };
 
 void practice6_6(void) {
+    struct bill {
+        string name;
+        double fund;
+    };
+    int patrons_num = 0;
+    cout << "Please enter the number of patrons: ";
+    cin >> patrons_num;
+    bill *bills = new bill[patrons_num];
+    bool has_grand_patrons = false;
+    bool has_normal_patrons = false;
+    for (int i = 0; i < patrons_num; i++) {
+        cout << "Please fill up the bill #" << (i + 1) << endl;
+        cout << "NAME :";
+        cin >> bills[i].name;
+        cout << "FUNDs : ";
+        cin >> bills[i].fund;
+        bills[i].fund > 10000 ? has_grand_patrons = true : has_normal_patrons = true;
+    }
+    cout << "Grand Patrons" << endl;
+    for (int i = 0; i < patrons_num; i++) {
+
+        if (has_grand_patrons) {
+            if (bills[i].fund > 10000)
+                cout << bills[i].name << endl;
+        }
+        else
+            cout << "none\n";
+    }
+    cout << "Patrons" << endl;
+    for (int i = 0; i < patrons_num; i++) {
+        if (has_normal_patrons) {
+            if (bills[i].fund < 10000)
+                cout << bills[i].name << endl;
+        }
+        else
+            cout << "none\n";
+    }
+
+
+
 
 };
 
 void practice6_7(void) {
+    cout << "Enter words (q to quit)\n";
+    int V_words = 0;
+    int C_words = 0;
+    int other = 0;
+    string input_word;
+    cin >> input_word;
+    while (input_word != "q") {
+        if (!isalpha(input_word.at(0)))
+            other++;
+        else if (tolower(input_word.at(0)) == 'a' ||
+            tolower(input_word.at(0)) == 'e' ||
+            tolower(input_word.at(0)) == 'i' ||
+            tolower(input_word.at(0)) == 'o' ||
+            tolower(input_word.at(0)) == 'u')
+            V_words++;
+        else
+            C_words++;
+        cin >> input_word;
+
+    }
+    cout << V_words << " words beginning with vowels\n";
+    cout << C_words << " words beginning with consonants\n";
+    cout << other << " others";
 
 };
 
@@ -156,13 +254,15 @@ void practice6_9(void) {
 
 };
 
-void practice6_10(void) {
 
-};
 
 void Chapter6_test(void) {
 	//practice6_1();
 	//practice6_2();
     //practice6_3();
     //practice6_4();
+    //practice6_5();
+    //practice6_6();
+    //practice6_7();
+    practice6_8();
 }

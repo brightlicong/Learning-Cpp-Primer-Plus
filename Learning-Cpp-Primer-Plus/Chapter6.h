@@ -18,4 +18,3 @@ void practice6_8(void);
 
 void practice6_9(void);
 
-void practice6_10(void);
