@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cctype>
 #include <string>
+#include <fstream>
 #include <stdlib.h>
 
 using namespace std;
@@ -178,7 +179,7 @@ void practice6_5(void) {
 void practice6_6(void) {
     struct bill {
         string name;
-        double fund;
+        double fund = 0.0;
     };
     int patrons_num = 0;
     cout << "Please enter the number of patrons: ";
@@ -195,28 +196,25 @@ void practice6_6(void) {
         bills[i].fund > 10000 ? has_grand_patrons = true : has_normal_patrons = true;
     }
     cout << "Grand Patrons" << endl;
-    for (int i = 0; i < patrons_num; i++) {
-
-        if (has_grand_patrons) {
+    
+    if (has_grand_patrons) {
+        for (int i = 0; i < patrons_num; i++) {
             if (bills[i].fund > 10000)
                 cout << bills[i].name << endl;
         }
-        else
-            cout << "none\n";
     }
+    else
+        cout << "none\n";
     cout << "Patrons" << endl;
-    for (int i = 0; i < patrons_num; i++) {
-        if (has_normal_patrons) {
-            if (bills[i].fund < 10000)
+
+    if (has_normal_patrons) {
+        for (int i = 0; i < patrons_num; i++) {
+            if (bills[i].fund <= 10000)
                 cout << bills[i].name << endl;
         }
-        else
-            cout << "none\n";
     }
-
-
-
-
+    else
+        cout << "none\n";
 };
 
 void practice6_7(void) {
@@ -247,11 +245,68 @@ void practice6_7(void) {
 };
 
 void practice6_8(void) {
-
+    char fileName[] = "Harry Poter.txt";
+    ifstream inFile;
+    inFile.open(fileName);
+    if (!inFile.is_open()) {
+        cout << "Could not open thr file " << fileName << endl;
+        exit(EXIT_FAILURE);
+    };
+    string words;
+    long count = 0;
+    while (inFile >> words)
+        count++;
+    cout << "The file has " << count << " words\n";
+    inFile.close();
 };
 
 void practice6_9(void) {
-
+    char fileName[] = "pratice9.txt";
+    ifstream inFile;
+    inFile.open(fileName);
+    if (!inFile.is_open()) {
+        cout << "Could not open thr file " << fileName << endl;
+        exit(EXIT_FAILURE);
+    };
+    /*************/
+    struct bill {
+        //char name[20];
+        string name;
+        long fund = 0.0;
+    };
+    int patrons_num = 0;
+    inFile >> patrons_num;
+    string xx; // Ω” ’\n
+    getline(inFile,xx);
+    bill* bills = new bill[patrons_num];
+    bool has_grand_patrons = false;
+    bool has_normal_patrons = false;
+    for (int i = 0; i < patrons_num; i++) {
+        getline(inFile, bills[i].name);
+        inFile >> bills[i].fund;
+        getline(inFile, xx);
+        bills[i].fund > 10000 ? has_grand_patrons = true : has_normal_patrons = true;
+    }
+    cout << "--*Grand Patrons*--" << endl;
+    if (has_grand_patrons) {
+        for (int i = 0; i < patrons_num; i++) {
+            if (bills[i].fund > 10000)
+                cout << bills[i].name << endl;
+        }
+    }
+    else
+        cout << "none\n";
+    
+    cout << "----*Patrons*----" << endl;
+    if (has_normal_patrons) {
+        for (int i = 0; i < patrons_num; i++) {
+            if (bills[i].fund <= 10000)
+                cout << bills[i].name << endl;
+        }
+    }
+    else
+        cout << "none\n";
+    inFile.close();
 };
 
 
@@ -264,5 +319,6 @@ void Chapter6_test(void) {
     //practice6_5();
     //practice6_6();
     //practice6_7();
-    practice6_8();
+    //practice6_8();
+    practice6_9();
 }
