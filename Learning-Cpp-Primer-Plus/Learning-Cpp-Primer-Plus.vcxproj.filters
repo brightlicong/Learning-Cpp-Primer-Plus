@@ -36,22 +36,34 @@
     <ClCompile Include="Chapter6.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Chapter7.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter8.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter2.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Chapter3.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Chapter4.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Chapter5.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Chapter6.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter7.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter8.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
