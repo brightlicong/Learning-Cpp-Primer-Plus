@@ -147,6 +147,8 @@
     <ClCompile Include="Chapter6.cpp" />
     <ClCompile Include="Chapter7.cpp" />
     <ClCompile Include="Chapter8.cpp" />
+    <ClCompile Include="Chapter9.cpp" />
+    <ClCompile Include="golf.cpp" />
     <ClCompile Include="Learning-Cpp-Primer-Plus.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
@@ -158,6 +160,8 @@
     <ClInclude Include="Chapter6.h" />
     <ClInclude Include="Chapter7.h" />
     <ClInclude Include="Chapter8.h" />
+    <ClInclude Include="Chapter9.h" />
+    <ClInclude Include="golf.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Harry Poter.txt" />

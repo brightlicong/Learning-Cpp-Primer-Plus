@@ -2,12 +2,15 @@
 //
 
 #include <iostream>
-extern void TEST();
+#include "Chapter9.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
-    TEST();
+
+	using Chapter9::test;
+	test();
+
     return 0;
 }
 

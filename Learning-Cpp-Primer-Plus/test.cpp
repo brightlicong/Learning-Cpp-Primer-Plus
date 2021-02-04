@@ -1,4 +1,4 @@
-#include "Chapter8.h"
+#include "Chapter9.h"
 #include <iostream>
 
 void show_array(int arr[][4]) {
@@ -19,6 +19,7 @@ void tryNewFeature(void) {
 
 
 void TEST(void) {
-	Chapter8_test();
+	using Chapter9::test;
+	test();
 	//tryNewFeature();
 }

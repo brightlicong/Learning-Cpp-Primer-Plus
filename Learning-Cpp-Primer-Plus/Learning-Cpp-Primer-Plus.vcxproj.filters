@@ -42,6 +42,12 @@
     <ClCompile Include="Chapter8.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Chapter9.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="golf.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter2.h">
@@ -63,6 +69,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Chapter8.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter9.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="golf.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
