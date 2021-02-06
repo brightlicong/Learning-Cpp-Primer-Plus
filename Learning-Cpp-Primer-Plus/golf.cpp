@@ -46,3 +46,40 @@ namespace Chapter9{
 		cout << "HADNICAP: " << g.handicap << endl;
 	}
 }
+
+namespace Chapter10 {
+	golf::golf(const char* name, int hc) {
+		for (int i = 0; i < Len; i++) {
+			fullname[i] = name[i];
+		}
+		handicap = hc;
+	}
+
+	golf::golf() {
+		using std::cout;
+		using std::cin;
+		char temp[Len] = "";
+		int hand = 0;
+		cout << "Please enter the full name of golf player: ";
+		cin.getline(temp, Len);
+
+		cout << "Please enter the hanicap of golf player: ";
+		cin >> hand;
+		cin.get();
+
+		*this = golf(temp, hand); 
+	}
+
+	void golf::sethandicap(int hc) {
+		handicap = hc;
+	}
+
+	void golf::showgolf() const {
+		using std::cout;
+		using std::endl;
+		cout << endl;
+		cout << "NAME: " << fullname << endl;
+		cout << "-- --\n";
+		cout << "HADNICAP: " << handicap << endl;
+	}
+}

@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BankAccount.cpp" />
+    <ClCompile Include="Chapter10.cpp" />
     <ClCompile Include="Chapter2.cpp" />
     <ClCompile Include="Chapter3.cpp" />
     <ClCompile Include="Chapter4.cpp" />
@@ -150,9 +152,16 @@
     <ClCompile Include="Chapter9.cpp" />
     <ClCompile Include="golf.cpp" />
     <ClCompile Include="Learning-Cpp-Primer-Plus.cpp" />
+    <ClCompile Include="List.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Sales.cpp" />
+    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BankAccount.h" />
+    <ClInclude Include="Chapter10.h" />
     <ClInclude Include="Chapter2.h" />
     <ClInclude Include="Chapter3.h" />
     <ClInclude Include="Chapter4.h" />
@@ -162,6 +171,11 @@
     <ClInclude Include="Chapter8.h" />
     <ClInclude Include="Chapter9.h" />
     <ClInclude Include="golf.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="Sales.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Harry Poter.txt" />

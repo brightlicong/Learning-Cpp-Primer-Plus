@@ -9,7 +9,7 @@ namespace Chapter9 {
 		//practice1();
 		//practice2();
 		//practice3();
-		practice4();
+		//practice4();
 	}
 
 	/* - 1 - */

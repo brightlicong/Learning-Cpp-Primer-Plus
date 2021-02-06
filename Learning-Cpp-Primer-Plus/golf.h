@@ -11,3 +11,16 @@ namespace Chapter9{
 	void showgolf(const golf& g);
 }
 
+namespace Chapter10 {
+	class golf {
+		static const int Len = 40;
+		char fullname[Len];
+		int handicap;
+	public:
+		golf(const char* name, int hc);
+		golf();
+		void sethandicap(int hc);
+		void showgolf() const;
+	};
+}
+
