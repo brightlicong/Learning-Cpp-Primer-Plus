@@ -66,7 +66,10 @@
     <ClCompile Include="Move.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="List.cpp">
+    <ClCompile Include="Chapter11.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,16 +119,22 @@
     <ClInclude Include="Move.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="List.h">
+    <ClInclude Include="Chapter11.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Harry Poter.txt">
-      <Filter>源文件</Filter>
-    </Text>
     <Text Include="pratice9.txt">
-      <Filter>源文件</Filter>
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="Harry Poter.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="txt\randwalk.txt">
+      <Filter>资源文件</Filter>
     </Text>
   </ItemGroup>
 </Project>
