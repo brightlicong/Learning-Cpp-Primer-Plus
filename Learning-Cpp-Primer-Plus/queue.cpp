@@ -77,4 +77,10 @@ namespace Chapter12{
         processtime = std::rand() % 3 + 1;
         arrive = when;
     }
+
+
+    bool operator>(const Queue& item1, const Queue& item2)
+    {
+        return item1.items > item2.items;
+    }
 }

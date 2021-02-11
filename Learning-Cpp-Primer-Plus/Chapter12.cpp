@@ -11,7 +11,7 @@
 
 namespace Chapter12 {
 	void test() {
-		practice4();
+		practice6();
 	}
 
 	void practice1() {
@@ -91,8 +91,8 @@ namespace Chapter12 {
 		cout << st.isempty() << endl;
 		cout << "Is st full:";
 		cout << st.isfull() << endl;
-
-		Item it[10];
+		
+		Stack_item it[10];
 		cout << "Push to st:";
 		for (int i = 0; i < 10; i++)
 		{
@@ -122,11 +122,13 @@ namespace Chapter12 {
 		cout << st.isempty() << endl;
 		return;
 	}
-
+	
 	bool newcustomer(double x)
 	{
 		return (std::rand() * x / RAND_MAX < 1);
 	}
+	const int MIN_PER_HR = 60;
+
 	void practice5() {
 		using std::cin;
 		using std::cout;
@@ -209,5 +211,105 @@ namespace Chapter12 {
 		return;
 	}
 
-	
+	void practice6() {
+		using std::cin;
+		using std::cout;
+		using std::endl;
+		using std::ios_base;
+		// setting things up     
+		std::srand(std::time(0));    //  random initializing of rand()
+
+		cout << "Case Study: Bank of Heather Automatic Teller\n";
+		cout << "Enter maximum size of queue: ";
+		int qs;
+		cin >> qs;
+		Queue line1(qs);         // line queue holds up to qs people
+		Queue line2(qs);         //分成两个队伍进行计算
+
+		cout << "Enter the number of simulation hours: ";
+		int hours;              //  hours of simulation
+		cin >> hours;
+		// simulation will run 1 cycle per minute
+		long cyclelimit = MIN_PER_HR * hours; // # of cycles
+
+		cout << "Enter the average number of customers per hour: ";
+		double perhour;         //  average # of arrival per hour
+		cin >> perhour;
+		double min_per_cust;    //  average time between arrivals
+		min_per_cust = MIN_PER_HR / perhour;
+
+		Item temp;              //  new customer data
+		long turnaways = 0;     //  turned away by full queue
+		long customers = 0;     //  joined the queue
+		long served = 0;        //  served during the simulation
+		long sum_line = 0;      //  cumulative line length
+		int wait1_time = 0;      //  time until autoteller is free
+		int wait2_time = 0;
+		long line1_wait = 0;     //  cumulative time in line
+		long line2_wait = 0;
+
+
+		// running the simulation
+		for (int cycle = 0; cycle < cyclelimit; cycle++)
+		{
+			if (newcustomer(min_per_cust))  // have newcomer
+			{
+				if (line1.isfull() && line2.isfull())
+					turnaways++;
+				else if (line2 > line1 || line1.isfull())
+				{
+					customers++;
+					temp.set(cycle);    // cycle = time of arrival
+					line1.enqueue(temp); // add newcomer to line1
+				}
+				else
+				{
+					customers++;
+					temp.set(cycle);    // cycle = time of arrival
+					line2.enqueue(temp); // add newcomer to line2
+				}
+			}
+			if (wait1_time <= 0 && !line1.isempty())
+			{
+				line1.dequeue(temp);      // attend next customer
+				wait1_time = temp.ptime(); // for wait_time minutes
+				line1_wait += cycle - temp.when();
+				served++;
+			}
+			if (wait2_time <= 0 && !line2.isempty())
+			{
+				line2.dequeue(temp);      // attend next customer
+				wait2_time = temp.ptime(); // for wait_time minutes
+				line2_wait += cycle - temp.when();
+				served++;
+			}
+
+			if (wait1_time > 0)
+				wait1_time--;
+			sum_line += line1.queuecount();
+			if (wait2_time > 0)
+				wait2_time--;
+			sum_line += line2.queuecount();
+		}
+
+		// reporting results
+		if (customers > 0)
+		{
+			cout << "customers accepted: " << customers << endl;
+			cout << "  customers served: " << served << endl;
+			cout << "         turnaways: " << turnaways << endl;
+			cout << "average queue size: ";
+			cout.precision(2);
+			cout.setf(ios_base::fixed, ios_base::floatfield);
+			cout << (double)sum_line / cyclelimit << endl;
+			cout << " average wait time: "
+				<< (double)(line1_wait + line2_wait) / served << " minutes\n";
+		}
+		else
+			cout << "No customers!\n";
+		cout << "Done!\n";
+		// cin.get();
+		// cin.get();
+		return;
+	}
 }

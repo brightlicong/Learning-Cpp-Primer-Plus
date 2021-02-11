@@ -1,4 +1,3 @@
-
 #ifndef QUEUE_H_
 #define QUEUE_H_
 // This queue will contain Customer items
@@ -40,6 +39,7 @@ namespace Chapter12 {
         int queuecount() const;
         bool enqueue(const Item& item); // add item to end
         bool dequeue(Item& item);       // remove item from front
+        friend bool operator>(const Queue& item1, const Queue& item2);
     };
 }
 #endif

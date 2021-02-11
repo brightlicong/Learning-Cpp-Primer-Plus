@@ -1,30 +1,14 @@
 #ifndef  STACK_H_
 #define STACK_H_
 
-typedef unsigned long Item;
-
-class Stack
-{
-private:
-	enum {MAX = 10};
-	Item items[MAX];
-	int top;
-public:
-	Stack();
-	bool isempty() const;
-	bool isfull() const;
-	bool push(const Item& item);
-	bool pop(Item& item);
-};
-
-
 
 namespace Chapter12 {
+	typedef unsigned long Stack_item;
 	class Stack
 	{
 	private:
 		enum { MAX = 10 };    // constant specific to class
-		Item* pitems;       // holds stack items
+		Stack_item* pitems;       // holds stack items
 		int size;            //number of elements in stack
 		int top;            // index for top stack item
 	public:
@@ -34,9 +18,9 @@ namespace Chapter12 {
 		bool isempty() const;
 		bool isfull() const;
 		// push() returns false if stack already is full, true otherwise
-		bool push(const Item& item);   // add item to stack
+		bool push(const Stack_item& item);   // add item to stack
 		// pop() returns false if stack already is empty, true otherwise
-		bool pop(Item& item);          // pop top into item
+		bool pop(Stack_item& item);          // pop top into item
 		Stack& operator=(const Stack& st);
 	};
 }
