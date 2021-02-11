@@ -11,7 +11,7 @@
 
 namespace Chapter12 {
 	void test() {
-		practice6();
+		practice5();
 	}
 
 	void practice1() {
@@ -149,9 +149,10 @@ namespace Chapter12 {
 		// simulation will run 1 cycle per minute
 		long cyclelimit = MIN_PER_HR * hours; // # of cycles
 
-		cout << "Enter the average number of customers per hour: ";
-		double perhour;         //  average # of arrival per hour
-		cin >> perhour;
+		//cout << "Enter the average number of customers per hour: ";
+		//double perhour;         //  average # of arrival per hour
+		//cin >> perhour;
+		double perhour = 1;
 		double min_per_cust;    //  average time between arrivals
 		min_per_cust = MIN_PER_HR / perhour;
 
@@ -164,9 +165,11 @@ namespace Chapter12 {
 		long line_wait = 0;     //  cumulative time in line
 
 
-	// running the simulation
+		cout << "running the simulation";
+		cout << "# " << perhour;
 		for (int cycle = 0; cycle < cyclelimit; cycle++)
 		{
+			
 			if (newcustomer(min_per_cust))  // have newcomer
 			{
 				if (line.isfull())
@@ -189,22 +192,42 @@ namespace Chapter12 {
 				wait_time--;
 			sum_line += line.queuecount();
 		}
-
-		// reporting results
-		if (customers > 0)
-		{
-			cout << "customers accepted: " << customers << endl;
-			cout << "  customers served: " << served << endl;
-			cout << "         turnaways: " << turnaways << endl;
-			cout << "average queue size: ";
-			cout.precision(2);
-			cout.setf(ios_base::fixed, ios_base::floatfield);
-			cout << (double)sum_line / cyclelimit << endl;
-			cout << " average wait time: "
-				<< (double)line_wait / served << " minutes\n";
+		double ave_wait_t = (double)line_wait / served;
+		cout << ave_wait_t << "min" << endl;
+		while (ave_wait_t <= 1) {
+			perhour++;
+			line_wait = served = 0;
+			min_per_cust = MIN_PER_HR / perhour;
+			cout << "# " << perhour <<" ";
+			for (int cycle = 0; cycle < cyclelimit; cycle++)
+			{
+				if (newcustomer(min_per_cust))  // have newcomer
+				{
+					if (line.isfull())
+						turnaways++;
+					else
+					{
+						customers++;
+						temp.set(cycle);    // cycle = time of arrival
+						line.enqueue(temp); // add newcomer to line
+					}
+				}
+				if (wait_time <= 0 && !line.isempty())
+				{
+					line.dequeue(temp);      // attend next customer
+					wait_time = temp.ptime(); // for wait_time minutes
+					line_wait += cycle - temp.when();
+					served++;
+				}
+				if (wait_time > 0)
+					wait_time--;
+				sum_line += line.queuecount();
+				
+			}
+			ave_wait_t = (double)line_wait / served;
+			cout << ave_wait_t << "min" << endl;
 		}
-		else
-			cout << "No customers!\n";
+		// reporting results
 		cout << "Done!\n";
 		// cin.get();
 		// cin.get();
