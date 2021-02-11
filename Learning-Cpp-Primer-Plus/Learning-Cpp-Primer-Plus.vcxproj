@@ -143,6 +143,7 @@
     <ClCompile Include="BankAccount.cpp" />
     <ClCompile Include="Chapter10.cpp" />
     <ClCompile Include="Chapter11.cpp" />
+    <ClCompile Include="Chapter12.cpp" />
     <ClCompile Include="Chapter2.cpp" />
     <ClCompile Include="Chapter3.cpp" />
     <ClCompile Include="Chapter4.cpp" />
@@ -151,12 +152,16 @@
     <ClCompile Include="Chapter7.cpp" />
     <ClCompile Include="Chapter8.cpp" />
     <ClCompile Include="Chapter9.cpp" />
+    <ClCompile Include="Cow.cpp" />
     <ClCompile Include="golf.cpp" />
     <ClCompile Include="Learning-Cpp-Primer-Plus.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="queue.cpp" />
     <ClCompile Include="Sales.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="Stock.cpp" />
+    <ClCompile Include="String2.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
@@ -164,6 +169,7 @@
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="Chapter10.h" />
     <ClInclude Include="Chapter11.h" />
+    <ClInclude Include="Chapter12.h" />
     <ClInclude Include="Chapter2.h" />
     <ClInclude Include="Chapter3.h" />
     <ClInclude Include="Chapter4.h" />
@@ -172,11 +178,15 @@
     <ClInclude Include="Chapter7.h" />
     <ClInclude Include="Chapter8.h" />
     <ClInclude Include="Chapter9.h" />
+    <ClInclude Include="Cow.h" />
     <ClInclude Include="golf.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="queue.h" />
     <ClInclude Include="Sales.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Stock.h" />
+    <ClInclude Include="String2.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
